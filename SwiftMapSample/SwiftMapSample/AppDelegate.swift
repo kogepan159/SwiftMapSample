@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //発行したAPIキーを設定
+        GMSServices.provideAPIKey("AIzaSyBXlhBjcVWEQq4Llc3-dh2vc-ni5akqwYg")
+        
         return true
     }
 
