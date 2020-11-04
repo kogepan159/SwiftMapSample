@@ -22,7 +22,9 @@ class ViewController: UIViewController {
     @objc func didTapButton() {
         let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "map") as! NextViewController
         //NextViewControllerから緯度と経度の引数に値を設定
-        nextViewController.configure(latitude: 34.6862, longitude: 135.5196)
+        guard let letlatitude  = Double(latitudeTextField.text ?? "0.0") else { return }
+        guard let longitude  = Double(longitudeTextField.text ?? "0.0") else { return }
+        nextViewController.configure(latitude: letlatitude, longitude: longitude)
         self.present(nextViewController, animated: true, completion: nil)
     }
 }
